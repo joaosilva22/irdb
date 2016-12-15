@@ -2,21 +2,30 @@
 include('config/init.php');
 include('templates/head.php');
 include('templates/header.php');
+include('templates/image.php');
 include_once('database/restaurant.php');
 
 $string = $_POST['search'];
-$results = searchRestaurants($string);
+$results = searchRestaurants($string);?>
 
-echo '<h1>Search Results: </h1>';
-echo '<div>';
-
-foreach($results as $result) {
-?>
-    <a href="restaurant_page.php?restaurant=<?=$result['Id']?>"><?=$result['Name']?></a><br>
+<div>
+<form class="form">
+	<div class="form_header">
+		<h1>Search Results: </h1>
+	</div>
+	<hr class="divider"/>
+	<div class="inputs">
+	<ul>
+	<?php foreach($results as $result) {
+	?>
+	    <li id="search_result"><a id="res_result" href="restaurant_page.php?restaurant=<?=$result['Id']?>"><?=$result['Name']?></a></li>
+	<?php
+	}
+	?>
+	</ul>
+	</div>
+</form>
+</div>
 <?php
-}
-
-echo '</div>';
-
 include('templates/footer.php');
 ?>

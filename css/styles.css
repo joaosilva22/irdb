@@ -748,6 +748,33 @@ input:-moz-placeholder {
 	height: auto;
 }
 
+.form .inputs ul{
+  margin:0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+.form .inputs ul #search_result{
+  width: 600px;
+  margin:0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #c9af98;
+  display: block;
+}
+
+.form .inputs ul #search_result:first-of-type{
+  padding-top: 0px;
+}
+
+.form a{
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15pt;
+  color: #c9af98;
+}
+
 footer{
 	position:fixed;
 	bottom:0px;
