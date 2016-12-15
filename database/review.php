@@ -39,9 +39,9 @@ class Review {
 	$stmt = $conn->prepare('SELECT * FROM Review, Restaurant WHERE Review.Id = ? AND Restaurant.Id = Review.Restaurant');
 	$stmt->execute(array($id));
 	
-	$name = $stmt->fetchAll();	
+	$name = $stmt->fetch();	
 	
-	return $name[0]['Name'];
+	return $name['Name'];
     }
     
     public function getScore($id) {
@@ -50,9 +50,9 @@ class Review {
 	$stmt = $conn->prepare('SELECT * FROM Review WHERE Review.Id = ?');
 	$stmt->execute(array($id));
 	
-	$name = $stmt->fetchAll();	
+	$name = $stmt->fetch();	
 	
-	return $name[0]['Score'];
+	return $name['Score'];
     }
     
     public function getReviewerFirstName($id) {
@@ -145,6 +145,15 @@ class Review {
 
 	$stmt = $conn->prepare('SELECT Review.Id, Review.Score FROM Review, Comment, Person WHERE Person.Id = ? AND Person.Id = Comment.Commenter AND Review.Comment = Comment.Id');
 	$stmt->execute(array($id));
+
+	return $stmt->fetchAll();
+    }
+
+    public function getLatestReviews($num) {
+	global $conn;
+
+	$stmt = $conn->prepare('SELECT * FROM Review, Comment WHERE Review.Comment = Comment.Id ORDER BY Comment.Timestamp DESC LIMIT ?');
+	$stmt->execute(array($num));
 
 	return $stmt->fetchAll();
     }

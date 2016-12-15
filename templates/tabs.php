@@ -20,18 +20,16 @@
     <li  id="latestReview">
       <a href="#latestReview">Latest Review</a>
       <div>
-            Phasellus varius urna in nulla molestie lacinia. Nam in est elit, ut placerat lectus. Sed consequat 
-            dui vel sapien condimentum ut facilisis 
-            quam lacinia. Proin nec libero at sem pretium dignissim. Aliquam auctor egestas elit vel ornare. 
-            Fusce consectetur sagittis nulla ac congue. 
-            Mauris eu mattis nibh. Nunc turpis eros, pharetra in vestibulum eget, tristique id enim. In hac 
-            habitasse platea dictumst. Pellentesque volutpat, arcu posuere sagittis elementum, sem odio 
-            condimentum tortor, at tempus velit nisi quis tortor. Praesent vitae sodales sem. 
-            Vivamus posuere egestas sapien at rhoncus. Pellentesque habitant morbi tristique senectus et netus 
-            et malesuada fames ac turpis egestas. 
-            Mauris semper velit at risus faucibus fermentum. Nam molestie, libero non feugiat adipiscing, risus 
-            magna laoreet tortor, in tincidunt est quam quis dui. Aliquam feugiat libero at magna rhoncus vitae 
-            ullamcorper ipsum euismod. 
+	  <ul class="restaurant_list">
+	      <?php
+	      $latest = Review::getLatestReviews(10);
+	      foreach($latest as $review) {
+		  echo '<li>';
+		  echo '<h2>' . '<a href="restaurant_page.php?restaurant=' . $review['Restaurant'] . '">' . Review::getRestaurantName($review['Restaurant']) . '</a> ' .  $review['Score'] . ' ' . $review['Timestamp'] . '</h2>';
+		  echo '</li>';
+	      }
+	      ?>
+	  </ul>
       </div>
     </li>
 
