@@ -2,12 +2,12 @@
 $reviews = getRestaurantReviews($id);
 ?>
 
-<div>
-    <h1>Reviews</h1>
+<ul>
     <?php 
-		foreach($reviews as $review) {
+		foreach($reviews as $review) { ?>
+			<li><?php
 			Review::printReviewHead($review);
-			?><a href="review_page.php?review=<?=$review['Id']?>">View</a></p><?php
+			?><a href="review_page.php?review=<?=$review['Id']?>">View</a></p></li><?php
 		}
 	?>
-</div>
+</ul>

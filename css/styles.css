@@ -281,7 +281,8 @@ body div{
   background-color: #f1f1f1; /*#c9af98;*/
   color: #3a4660;
   display: block;
-  overflow: auto;
+  overflow:auto;
+  overflow-x: hidden;
 }
 
 #latestReview div{
@@ -295,9 +296,29 @@ body div{
   left: 0;
   background-color: #f1f1f1;
   color: #3a4660;
-  overflow: auto;
+  overflow:auto;
+  overflow-x: hidden;
 }
 
+#tabs #user_tab div a{
+  padding: 0;
+  margin:0 auto;
+  text-shadow: 0 0 0 white,
+               0 0 0 white;
+  -moz-text-shadow: 0 0 0 white,
+               0 0 0 white;
+  -webkit-text-shadow: 0 0 0 white,
+               0 0 0 white;
+}
+
+#tabs #user_tab div a:hover{
+  text-shadow: 0px 1px 2px #c9af98,
+               0px -1px 0px #c9af98;
+  -moz-text-shadow: 0px 1px 2px #c9af98,
+               0px -1px 0px #c9af98;
+  -webkit-text-shadow: 0px 1px 2px #c9af98,
+               0px -1px 0px #c9af98;
+}
 #user_tab div{
   margin-left: 1px;
   margin-right: 1px;
@@ -310,7 +331,8 @@ body div{
   background-color: #f1f1f1; /*#c9af98;*/
   color: #3a4660;
   display: block;
-  overflow: auto;
+  overflow:auto;
+  overflow-x: hidden;
 }
 
 #tabs #restaurants_tab div .restaurant_list{
@@ -326,8 +348,29 @@ body div{
   padding-bottom: 10px;
   width:600px;
   display: block;
-  border-top: 1px solid black;
+  border-top: 1px solid #c9af98;
 }
+
+#tabs #restaurants_tab div .restaurant_list li a{
+  padding: 0;
+  margin:0 auto;
+  text-shadow: 0 0 0 white,
+               0 0 0 white;
+  -moz-text-shadow: 0 0 0 white,
+               0 0 0 white;
+  -webkit-text-shadow: 0 0 0 white,
+               0 0 0 white;
+}
+
+#tabs #restaurants_tab div .restaurant_list li a:hover{
+  text-shadow: 0px 1px 2px #c9af98,
+               0px -1px 0px #c9af98;
+  -moz-text-shadow: 0px 1px 2px #c9af98,
+               0px -1px 0px #c9af98;
+  -webkit-text-shadow: 0px 1px 2px #c9af98,
+               0px -1px 0px #c9af98;
+}
+
 #restaurants_tab div{
   margin-left: 1px;
   margin-right: 1px;
@@ -340,6 +383,7 @@ body div{
   background-color: #f1f1f1;
   color: #3a4660;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 
@@ -354,6 +398,8 @@ body div{
   bottom: 0;
   background-color: #f1f1f1;
   color: #3a4660;
+  overflow:auto;
+  overflow-x: hidden;
 }
 
 /*//========================  WELCOME  ==========================*/
@@ -458,7 +504,7 @@ input:-moz-placeholder {
     color:    #b5b5b5;
 }
 
-.form .inputs input[type=text],input[type=email], input[type=password] {
+.form .inputs input[type=text],input[type=email], input[type=password], input[type=url], input[type=address] {
     background: #f1f1f1;
     font-size: 0.8rem;
     -moz-border-radius: 3px;
@@ -548,14 +594,4 @@ input:-moz-placeholder {
 	border-radius:20px;
 	width: 400px;
 	height: auto;
-}
-
-/*====================================================
-===================== Pages ==========================
-=====================================================*/
-
-.page{
-  background-color: #555;
-  position: relative;
-  top:41px;
 }
