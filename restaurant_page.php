@@ -32,7 +32,7 @@ $avg = getAverageScore($id);
 <div>
     <ul id=tabs>
     <li id="user_tab">
-        <a href="#user_tab"><?=$name?> <?=$avg?>&#9733</a>
+        <a href="#user_tab">Restaurant</a>
         <div>
             <img src="./images/thumbs_medium/<?=$image?>">
             <h1><?=$name?> <?=$avg?>&#9733</h1>
