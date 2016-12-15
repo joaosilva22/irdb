@@ -6,8 +6,8 @@
 	<hr class="divider"/>
 	<div class="inputs">
 		<input type="hidden" name="restaurantid" value="<?=$restaurantid?>" required>
-	    <input type="number" name="score" min="0" max="10" required>
-	    <textarea name="comment" placeholder="Comment" rows="5" cols="70" required></textarea>
+	    <input type="number" name="score" min="0" max="10" id="score" required>
+	    <textarea name="comment" placeholder="Comment" rows="5" cols="70" id="comment"></textarea>
 	    <input type="submit" value="Submit">
 	</div>
     </form>

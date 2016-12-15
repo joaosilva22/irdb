@@ -172,5 +172,18 @@ console.log(res);
 	    }
 	}
     });
+
+    $('#add_review').validate({
+	rules: {
+	    score: {
+		required: true;
+	    }
+	},
+	messages: {
+	    score: {
+		required: 'Please select a score';
+	    }
+	}
+    });
     
 });
