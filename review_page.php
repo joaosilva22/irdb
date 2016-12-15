@@ -2,7 +2,7 @@
 include('config/init.php');
 include('templates/head.php');
 include('templates/header.php');
-
+include('templates/image.php');
 include_once('database/user.php');
 include_once('database/restaurant.php');
 include_once('database/review.php');

@@ -38,6 +38,6 @@
     <hr id="division" />
   </ul>
 
-  <div id="wellcome">BRIEF DESCRIPTION OF THE SITE (OR SOME STUFF)</div>
+  <div id="wellcome"></div>
 
 </div>
