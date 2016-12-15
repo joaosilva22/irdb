@@ -391,6 +391,14 @@ body div{
   -webkit-text-shadow: 0px 1px 2px #c9af98,
                0px -1px 0px #c9af98;
 }
+
+body div #tabs #user_tab div #map{
+  position: relative;
+  top:0;
+  left:100px;
+  overflow: default;
+}
+
 #user_tab div{
   margin-left: 1px;
   margin-right: 1px;

@@ -39,7 +39,7 @@ $avg = getAverageScore($id);
             <p><?=$description?></p>
             <h4><?=$website?></h4>
             <h4><?=$address?></h4>
-            <div id="map" lat="<?=$lat?>" lng="<?=$lng?>"></div>
+            <div id="map" lat="<?=$lat?>" lng="<?=$lng?>" style="width: 400px; height: 400px;"></div>
             <a href="user_page.php?username=<?=$ownerusername?>"><?=$owner?></a>
             <?php
             if (isset($_SESSION['id'])) {
