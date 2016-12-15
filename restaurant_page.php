@@ -24,11 +24,13 @@ $lng = getRestaurantLongitude($id);
 $photoId = getRestaurantPhoto($id);
 $image = getImagePath($photoId);
 
+$avg = getAverageScore($id);
+
 ?>
 
 <div>
     <img src="./images/thumbs_medium/<?=$image?>">
-    <h1><?=$name?></h1>
+    <h1><?=$name?> <?=$avg?>&#9733</h1>
     <p><?=$description?></p>
     <h4><?=$website?></h4>
     <h4><?=$address?></h4>

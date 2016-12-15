@@ -52,7 +52,7 @@ $image = getImagePath($photoId);
             <?php
             foreach($restaurants as $restaurant) { ?>
             <li>
-                <a href="restaurant_page.php?restaurant=<?=$restaurant['Id']?>"><?=$restaurant['Name']?></a>
+                <a href="restaurant_page.php?restaurant=<?=$restaurant['Id']?>"><?=$restaurant['Name']?> <?=getAverageScore($restaurant['Id'])?>&#9733</a>
                 <p><?=$restaurant['Description']?></p>
             </li>
             <?php } ?>

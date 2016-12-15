@@ -179,4 +179,30 @@ function getRestaurantLongitude($id) {
     return $longitude['Longitude'];
 }
 
+function getAverageScore($id) {
+    global $conn;
+
+    $stmt = $conn->prepare('SELECT Score FROM Restaurant, Review WHERE Restaurant.Id = ? AND Restaurant.Id = Review.Restaurant');
+    $stmt->execute(array($id));
+
+    $scores = $stmt->fetchAll();
+
+    $total = 0;
+    $count = 0;
+    foreach ($scores as $score) {
+	$total += $score['Score'];
+	$count += 1;
+    }
+
+    return round(($total/$count), 1);
+}
+
+function updateAverageScore($id) {
+    global $conn;
+
+    $avg = getAverageScore($id);
+    $stmt = $conn->prepare('UPDATE Restaurant SET AverageScore = ? WHERE Id = ?');
+    $stmt->execute(array($avg, $id));
+}
+
 ?>

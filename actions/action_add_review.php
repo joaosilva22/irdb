@@ -13,6 +13,7 @@ $comment = trim(strip_tags($_POST['comment']));
 $commentid = Comment::createReviewComment($_SESSION['id'], $comment);
 
 Review::createReview($restaurantid, $commentid, $score);
+updateAverageScore($restaurantid);
 
 header('Location: ../restaurant_page.php?restaurant=' . $restaurantid);
 
