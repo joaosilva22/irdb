@@ -26,36 +26,38 @@ $owner = getRestaurantOwner($restaurantid);
 ?>
 
 <div>
-    <h1><a href="restaurant_page.php?restaurant=<?=$restaurantid?>"><?=$restaurantName?></a></h1>
-    <p>Review by <a href="user_page.php?username=<?=$reviewerUsername?>"><?=$firstName . ' ' . $lastName?></a> <?=$timestamp?></p>
-    <h4><?=$score?></h4>
-    <p><?=$comment?></p>
-</div>
+	<form id="add_comment" class="form" action="actions/action_add_comment.php" method="post" enctype="multipart/form-data">
+		<div class="form_header">
+			<h1><a href="restaurant_page.php?restaurant=<?=$restaurantid?>"><?=$restaurantName?></a></h1>
+			<p>Review by <a href="user_page.php?username=<?=$reviewerUsername?>"><?=$firstName . ' ' . $lastName?></a> <?=$timestamp?></p>
+			<h4><?=$score?></h4>
+			<p><?=$comment?></p>
+		</div>
 
-<div>
-	<h2>Comments</h2>
-	<?php 
-		foreach($comments as $com) {
-			Comment::printComment($com['Id'], $reviewid, $owner, 0);
-			?><hr id="divider" /><?php
-		}
-		
-		if (isset($_SESSION['id'])) {
-	?>
-	
-	<form id="add_comment" action="actions/action_add_comment.php" method="post" enctype="multipart/form-data">
-	<div>
-	    <p>Make a comment</p>
-	</div>
-	<div>
-		<input type="hidden" name="reviewid" value="<?=$reviewid?>" required>
-	    <textarea name="comment" placeholder="Comment" rows="5" cols="70" required></textarea>
-	    <input type="submit" value="Submit">
-	</div>
-    </form>
-	
-		<?php }
-		?>
+		<div class="form_header">
+			<h2>Comments</h2>
+			<?php 
+				foreach($comments as $com) {
+					Comment::printComment($com['Id'], $reviewid, $owner, 0);
+					?><hr class="divider" /><?php
+				}
+				
+				if (isset($_SESSION['id'])) {
+			?>
+			
+			<div class="inputs">
+				<p>Make a comment</p>
+			</div>
+			<div class="inputs">
+				<input type="hidden" name="reviewid" value="<?=$reviewid?>" required>
+				<textarea name="comment" placeholder="Comment" rows="5" cols="70" required></textarea>
+				<input type="submit" value="Submit" id="submit">
+			</div>
+			
+				<?php }
+				?>
+		</div>
+	</form>
 </div>
 
 <?php

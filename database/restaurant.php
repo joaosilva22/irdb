@@ -193,6 +193,11 @@ function getAverageScore($id) {
 	$total += $score['Score'];
 	$count += 1;
     }
+	
+	if($count == 0.0)
+	{
+		return 0.0;
+	}
 
     return round(($total/$count), 1);
 }

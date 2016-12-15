@@ -12,7 +12,7 @@
 	    <label>New Website</label><input type="url" placeholder="<?=$website?>" name="website">
 	    <label>New Address</label><input type="address" placeholder="<?=$address?>" name="address">
 	    <label>Description</label><textarea name="description" rows="5" cols="70"><?=$description?></textarea>
-	    <input type="submit" value="Save Changes">
+	    <input type="submit" value="Save Changes" id="submit">
 	</div>
     </form>
 </div>

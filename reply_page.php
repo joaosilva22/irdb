@@ -20,21 +20,22 @@ $comment = Review::getReviewComment($reviewid);
 $comments = Review::getComments($reviewid);
 
 ?>
-
 <div>
-	<?php 
-		Comment::printCommentOnly($commentid);
-		?><hr id="divider" /><?php
-	?>
-	
-	<form id="add_comment" action="actions/action_add_reply.php" method="post" enctype="multipart/form-data">
-	<div>
-		<input type="hidden" name="reviewid" value="<?=$reviewid?>" required>
-		<input type="hidden" name="parent" value="<?=$commentid?>" required>
-	    <textarea name="comment" placeholder="Comment" rows="5" cols="70" required></textarea>
-	    <input type="submit" value="Submit">
-	</div>
-    </form>
+	<form class="form" id="add_comment" action="actions/action_add_reply.php" method="post" enctype="multipart/form-data">
+		<div class="form_header">
+			<?php 
+				Comment::printCommentOnly($commentid);
+				?><hr class"divider" /><?php
+			?>
+			
+			<div class="inputs">
+				<input type="hidden" name="reviewid" value="<?=$reviewid?>" required>
+				<input type="hidden" name="parent" value="<?=$commentid?>" required>
+				<textarea name="comment" placeholder="Comment" rows="5" cols="70" required></textarea>
+				<input type="submit" value="Submit">
+			</div>
+		</div>
+	</form>
 </div>
 
 <?php

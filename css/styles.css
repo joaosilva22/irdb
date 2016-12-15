@@ -402,6 +402,7 @@ body div #tabs #user_tab div #map{
 #user_tab div{
   margin-left: 1px;
   margin-right: 1px;
+  margin-top: 20px;
   position: absolute;
   z-index: -1;
   width: 600px;
@@ -454,6 +455,7 @@ body div #tabs #user_tab div #map{
 #restaurants_tab div{
   margin-left: 1px;
   margin-right: 1px;
+  margin-top: 20px;
   position: absolute;
   z-index: -1;
   width: 600px;
@@ -470,6 +472,7 @@ body div #tabs #user_tab div #map{
 #reviews_tab div{
   margin-left: 1px;
   margin-right: 1px;
+  margin-top: 20px;
   position: absolute;
   z-index: -1;
   width: 600px;
@@ -510,6 +513,26 @@ body div #tabs #user_tab div #map{
 }
 
 #tabs #reviews_tab div .restaurant_list li a:hover{
+  text-shadow: 0px 1px 2px #c9af98,
+               0px -1px 0px #c9af98;
+  -moz-text-shadow: 0px 1px 2px #c9af98,
+               0px -1px 0px #c9af98;
+  -webkit-text-shadow: 0px 1px 2px #c9af98,
+               0px -1px 0px #c9af98;
+}
+
+#tabs #reviews_tab div .restaurant_list li p a{
+  padding: 0;
+  margin:0 auto;
+  text-shadow: 0 0 0 white,
+               0 0 0 white;
+  -moz-text-shadow: 0 0 0 white,
+               0 0 0 white;
+  -webkit-text-shadow: 0 0 0 white,
+               0 0 0 white;
+}
+
+#tabs #reviews_tab div .restaurant_list li p a:hover{
   text-shadow: 0px 1px 2px #c9af98,
                0px -1px 0px #c9af98;
   -moz-text-shadow: 0px 1px 2px #c9af98,
@@ -586,6 +609,10 @@ body div #tabs #user_tab div #map{
   padding:0;
 }
 
+.form .form_header a{
+  color: #c9af98;
+}
+
 .form .divider{
   border:0px;
   height: 1px;
@@ -606,6 +633,15 @@ body div #tabs #user_tab div #map{
 .form .inputs label {
     color: #c9af98;
     font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+    display: block;
+}
+
+.form .inputs p {
+    color: #c9af98;
+    font-size: 16px;
     font-weight: 300;
     letter-spacing: 1px;
     margin-bottom: 7px;
@@ -710,4 +746,21 @@ input:-moz-placeholder {
 	border-radius:20px;
 	width: 400px;
 	height: auto;
+}
+
+footer{
+	position:fixed;
+	bottom:0px;
+	padding:0;
+	margin:0;
+	width:100%;
+}
+
+footer p{
+	margin-left:10px;
+	margin-bottom:10px;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+	color: #3a4660;
+	font-size:12pt;
 }

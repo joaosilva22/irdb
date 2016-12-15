@@ -72,14 +72,15 @@ $image = getImagePath($photoId);
             <ul class="restaurant_list">
             <?php
             foreach($reviews as $review) { ?>
-            <li>
-                <?php Review::printReviewHead($review);?>
-		<a href="review_page.php?review=<?=$review['Id']?>">View</a>
-            </li>
+			<li>
+                <?php Review::printReviewHead($review);?></p>
+					<a href="review_page.php?review=<?=$review['Id']?>">View </a>
+			</li>
+			<?php } ?>
             </ul>
         </div>
     </li>
-    <?php }
+    <?php
     }
     ?>
 
