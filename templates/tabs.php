@@ -1,22 +1,19 @@
 <div>
   <ul id="tabs">
-
     <li id="highestRated">
-      <a href="#highestRated">Highest Rated</a>
-      <div >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt nibh sagittis nulla 
-            scelerisque euismod. 
-            Nunc eu tortor et mauris ullamcorper feugiat. Cum sociis natoque penatibus et magnis dis parturient
-            montes, nascetur ridiculus mus. 
-            Fusce ac dictum libero. Nam varius sem quis elit rutrum sed ultrices enim sodales. Morbi metus 
-            turpis, sagittis ut fermentum ut, porta et nibh. 
-            Nunc tristique, ante mollis pulvinar consequat, justo lorem vestibulum sem, eu scelerisque felis 
-            neque nec ligula. 
-            Proin mollis sapien vitae lorem bibendum quis sagittis odio dignissim. Donec vitae mollis nisl. 
-            Ut tempor, metus sit amet iaculis hendrerit, nibh orci gravida urna, sit amet consequat massa neque
-            at erat. Maecenas tristique gravida felis non laoreet. Suspendisse vestibulum, ipsum sed 
-            dignissim consectetur, lorem ante placerat neque, eu condimentum est purus eu lacus. Quisque 
-            porttitor mattis sem ac porttitor. 
+	<a href="#highestRated">Highest Rated</a>
+	<div >
+	    <ul class="restaurant_list">
+		<?php
+		$highest = getHighestScoredRestaurants(10);
+		foreach($highest as $restaurant) {
+		    echo '<li>';
+		    echo '<h2>' . '<a href="restaurant_page.php?restaurant=' . $restaurant['Id'] . '">' .  $restaurant['Name'] . '</a> ' .  $restaurant['AverageScore'] . '&#9733</h2>';
+		    echo '<p>' . $restaurant['Description'] . '</p>';
+		    echo '</li>';
+		}
+		?>
+	    </ul>
       </div>
     </li>
 

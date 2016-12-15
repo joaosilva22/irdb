@@ -205,4 +205,14 @@ function updateAverageScore($id) {
     $stmt->execute(array($avg, $id));
 }
 
+function getHighestScoredRestaurants($num) {
+    global $conn;
+
+    $stmt = $conn->prepare('SELECT * FROM Restaurant ORDER BY AverageScore DESC LIMIT ?');
+    $stmt->execute(array($num));
+
+   return $stmt->fetchAll();
+}
+
+
 ?>
