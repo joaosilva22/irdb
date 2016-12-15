@@ -36,7 +36,7 @@ $owner = getRestaurantOwner($restaurantid);
 	<h2>Comments</h2>
 	<?php 
 		foreach($comments as $com) {
-			Comment::printComment($com['Id'], $reviewid, $owner);
+			Comment::printComment($com['Id'], $reviewid, $owner, 0);
 			?><hr id="divider" /><?php
 		}
 		

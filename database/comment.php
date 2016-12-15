@@ -42,7 +42,7 @@ class Comment {
 	return $stmt->fetchAll();
     }   
 	
-	public function printComment($id, $reviewid, $ownerid) {
+	public function printComment($id, $reviewid, $ownerid, $lvl) {
 		global $conn;
 
 		$stmt = $conn->prepare('SELECT Person.FirstName, Person.LastName, Person.Username, Person.Id, Timestamp, Text FROM Person, Comment WHERE Comment.Id=? AND Person.Id = Comment.Commenter');
@@ -50,6 +50,7 @@ class Comment {
 		
 	    $comment = $stmt->fetchAll();
 
+	    echo '<div class="lvl' . $lvl . '">';
 	    echo '<p><a href="user_page.php?username=' . $comment[0]['Username']. '">' . $comment[0]['FirstName'] . ' ' . $comment[0]['LastName'] . '</a> ' . $comment[0]['Timestamp'];
 	    if ($comment[0]['Id'] == $ownerid) {
 		echo ' [owner] </p>';
@@ -70,8 +71,9 @@ class Comment {
 		
 		foreach($comments as $com)
 		{
-			echo "</p>";
-			Comment::printComment($com['Id'], $reviewid, $ownerid);
+												       echo "</p>";
+												       echo "</div>";
+			Comment::printComment($com['Id'], $reviewid, $ownerid, $lvl+1);
 		}
     }  
 	
