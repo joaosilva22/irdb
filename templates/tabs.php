@@ -25,7 +25,7 @@
 	      $latest = Review::getLatestReviews(10);
 	      foreach($latest as $review) {
 		  echo '<li>';
-		  echo '<h2>' . '<a href="restaurant_page.php?restaurant=' . $review['Restaurant'] . '">' . Review::getRestaurantName($review['Restaurant']) . '</a> ' .  $review['Score'] . ' ' . $review['Timestamp'] . '</h2>';
+		  echo '<h2>' . '<a href="restaurant_page.php?restaurant=' . $review['Restaurant'] . '">' . Review::getRestaurantName($review['Restaurant']) . '</a> ' .  $review['Score'] . '&#9733</h2><p> ' . $review['Timestamp'] . '</p>';
 		  echo '</li>';
 	      }
 	      ?>
