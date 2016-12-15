@@ -74,6 +74,7 @@ $image = getImagePath($photoId);
             foreach($reviews as $review) { ?>
             <li>
                 <?php Review::printReviewHead($review);?>
+		<a href="review_page.php?review=<?=$review['Id']?>">View</a>
             </li>
             </ul>
         </div>
