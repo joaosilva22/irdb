@@ -7,11 +7,11 @@
 	<div class="inputs">
 	    <img src="../images/thumbs_medium/<?=$image?>">
 	    <input type="hidden" name="restaurantid" value="<?=$restaurantid?>">
-	    <input type="file" name="image">
-	    <input type="text" placeholder="<?=$name?>" name="name">
-	    <input type="url" placeholder="<?=$website?>" name="website">
-	    <input type="address" placeholder="<?=$address?>" name="address">
-	    <textarea name="description" rows="5" cols="70"><?=$description?></textarea>
+	    <label>Photo</label><input type="file" name="image">
+	    <label>New Name</label><input type="text" placeholder="<?=$name?>" name="name">
+	    <label>New Website</label><input type="url" placeholder="<?=$website?>" name="website">
+	    <label>New Address</label><input type="address" placeholder="<?=$address?>" name="address">
+	    <label>Description</label><textarea name="description" rows="5" cols="70"><?=$description?></textarea>
 	    <input type="submit" value="Save Changes">
 	</div>
     </form>
